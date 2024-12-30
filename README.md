@@ -1,7 +1,7 @@
 # Wordpress Configurations
 These are the configurations I am doing for my WordPress website projects.
 
-## Register style.css file to the wordpress
+## Register style.css file to the WordPress
 
 ```php
 /* Add style.css file Start */
@@ -14,11 +14,11 @@ add_action('wp_enqueue_scripts', 'load_scripts' );
 
 ## Disable Auto-updates
 
-Disable Wordpress Core Updates.
+Disable WordPress Core Updates.
 ```php
 define('WP_AUTO_UPDATE_CORE', false);
 ```
-Disable Wordpress Theme & PluginsUpdates.
+Disable WordPress Theme & PluginsUpdates.
 ```php
 add_filter('auto_update_plugin', '__return_false');
 add_filter('auto_update_theme', '__return_false');
