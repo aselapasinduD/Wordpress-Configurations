@@ -3,6 +3,8 @@ These are the configurations I am doing for my WordPress website projects.
 
 ## Register style.css file to the WordPress
 
+Add this code to the bottom of the `function.php` file in the Theme Editor.
+
 ```php
 /* Add style.css file Start */
 function load_scripts() {
@@ -10,6 +12,20 @@ function load_scripts() {
 }
 add_action('wp_enqueue_scripts', 'load_scripts' );
 /* Add style.css file end */
+```
+
+## Enable Revisions & AutoSave For WooCommerce Products
+
+Add this code to the bottom of the `function.php` file in the Theme Editor.
+
+```php
+/* Enable Revisions For WooCommerce Products Start */
+add_filter( 'woocommerce_register_post_type_product', 'codebykp_modify_product_post_type' );
+function codebykp_modify_product_post_type( $args ) {
+     $args['supports'][] = 'revisions';
+     return $args;
+}
+/* Enable Revisions For WooCommerce Products end */
 ```
 
 ## Disable Auto-updates
